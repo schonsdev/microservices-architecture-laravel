@@ -1,0 +1,14 @@
+services:
+  nodeservice:
+    build: .
+    volumes:
+      - ./src:/app/src
+    env_file: .env
+    networks:
+      - ms-audio
+    ports:
+      - "3000:3000"
+
+networks:
+  ms-audio:
+    external: true
